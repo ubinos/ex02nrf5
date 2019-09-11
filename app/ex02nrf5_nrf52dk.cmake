@@ -1,7 +1,9 @@
-set_cache(NRF5SDK__BOARD_NAME                                                   "PCA10040"  STRING)
-set_cache(NRF5SDK__BOARD_CONFIG_NAME                                            "BLE_APP_BLINKY"    STRING)
+set_cache(UBINOS__BSP__LINK_MEMMAP_RAM_ORIGIN 0x20003400 STRING)
+set_cache(UBINOS__BSP__LINK_MEMMAP_RAM_LENGTH 0x0000CC00 STRING)
+set_cache(UBINOS__BSP__STACK_SIZE 0x00002000 STRING)
 
-set_cache(NRF5SDK__SWI_DISABLE0                                                 TRUE    BOOL)
+set_cache(NRF5SDK__BOARD_NAME "PCA10040" STRING)
+set_cache(NRF5SDK__SWI_DISABLE0 TRUE BOOL)
 
 include(${PROJECT_UBINOS_DIR}/config/ubinos_nrf52dk_softdevice.cmake)
 
@@ -22,3 +24,4 @@ file(GLOB_RECURSE _tmpsrc
 
 set(PROJECT_APP_SOURCES ${PROJECT_APP_SOURCES} ${_tmpsrc})
 
+include_directories(${_tmpdir})
