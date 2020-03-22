@@ -7,3 +7,9 @@
 [submodule "library/nrf5example"]
 	path = library/nrf5example
 	url = https://github.com/ubinos/nrf5example.git
+[submodule "library/seggerrtt"]
+	path = library/seggerrtt
+	url = git@github.com:ubinos/seggerrtt.git
+[submodule "library/seggerrtt_wrapper"]
+	path = library/seggerrtt_wrapper
+	url = git@github.com:ubinos/seggerrtt_wrapper.git
