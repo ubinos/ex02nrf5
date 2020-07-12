@@ -5,7 +5,7 @@ set_cache(NRF5SDK__SWI_DISABLE0 TRUE BOOL)
 
 include(${PROJECT_UBINOS_DIR}/config/ubinos_nrf52dk_softdevice.cmake)
 
-include(${PROJECT_LIBRARY_DIR}/nrf5sdk/config/nrf5sdk.cmake)
+include(${PROJECT_LIBRARY_DIR}/nrf5sdk_wrapper/config/nrf5sdk.cmake)
 
 ####
 
