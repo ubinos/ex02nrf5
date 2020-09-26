@@ -17,7 +17,7 @@ get_filename_component(_tmp_source_dir "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
 string(TOLOWER ${UBINOS__BSP__NRF52_SOFTDEVICE_NAME} _temp_softdevice_name)
 string(TOLOWER ${NRF5SDK__BOARD_NAME} _temp_board_name)
 
-include_directories(${_tmp_source_dir}/${_temp_board_name}/${_temp_softdevice_name}/config)
+include_directories(${_tmp_source_dir}/arch/arm/cortexm/nrf5/${_temp_board_name}/${_temp_softdevice_name}/config)
 include_directories(${_tmp_source_dir})
 
 file(GLOB_RECURSE _tmp_sources
