@@ -1,19 +1,22 @@
-set_cache(UBINOS__BSP__LINK_MEMMAP_RAM_ORIGIN 0x20003400 STRING)
-set_cache(UBINOS__BSP__LINK_MEMMAP_RAM_LENGTH 0x0000CC00 STRING)
+#
+# Copyright (c) 2021 Sung Ho Park and CSOS
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 
-set_cache(NRF5SDK__SWI_DISABLE0 TRUE BOOL)
-
-include(${PROJECT_UBINOS_DIR}/config/ubinos_nrf52dk_softdevice.cmake)
-
-include(${PROJECT_LIBRARY_DIR}/nrf5sdk_wrapper/config/nrf5sdk.cmake)
-
-####
+# {ubinos_config_type: [buildable, cmake, app]}
 
 set(INCLUDE__APP TRUE)
 set(APP__NAME "ex02nrf5")
 
-get_filename_component(_tmp_source_dir "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
+set_cache(UBINOS__BSP__LINK_MEMMAP_RAM_ORIGIN 0x20003400 STRING)
+set_cache(UBINOS__BSP__LINK_MEMMAP_RAM_LENGTH 0x0000CC00 STRING)
+set_cache(NRF5SDK__SWI_DISABLE0 TRUE BOOL)
 
+include(${PROJECT_UBINOS_DIR}/config/ubinos_nrf52dk_softdevice.cmake)
+include(${PROJECT_LIBRARY_DIR}/nrf5sdk_wrapper/config/nrf5sdk.cmake)
+
+get_filename_component(_tmp_source_dir "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
 string(TOLOWER ${UBINOS__BSP__NRF52_SOFTDEVICE_NAME} _temp_softdevice_name)
 string(TOLOWER ${NRF5SDK__BOARD_NAME} _temp_board_name)
 
