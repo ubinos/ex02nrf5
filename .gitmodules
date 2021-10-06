@@ -13,3 +13,6 @@
 [submodule "library/nrf5sdk_v17.00.00_lite"]
 	path = library/nrf5sdk_v17.00.00_lite
 	url = https://github.com/ubinos/nrf5sdk_v17.00.00_lite.git
+[submodule "library/nrf5sdk_extension"]
+	path = library/nrf5sdk_extension
+	url = https://github.com/ubinos/nrf5sdk_extension.git
