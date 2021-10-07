@@ -1,7 +1,5 @@
 #include <ubinos.h>
 
-#if (INCLUDE__APP__ex02nrf5 == 1)
-
 #include <stdio.h>
 
 #include <stdio.h>
@@ -23,14 +21,10 @@ int appmain(int argc, char *argv[]) {
 	srand(time(NULL));
 
 	r = task_create(NULL, task1func, NULL, task_getmiddlepriority(), 0, "task1");
-	if (0 != r) {
-		logme("fail at task_create\n");
-	}
+	ubi_assert(r == 0);
 
 	r = task_create(NULL, task2func, NULL, task_getmiddlepriority(), 0, "task2");
-	if (0 != r) {
-		logme("fail at task_create\n");
-	}
+	ubi_assert(r == 0);
 
 	ubik_comp_start();
 
@@ -60,6 +54,4 @@ static void task2func(void *arg) {
 		task_sleepms(delayms);
 	}
 }
-
-#endif /* (INCLUDE__APP__ex02nrf5 == 1) */
 
