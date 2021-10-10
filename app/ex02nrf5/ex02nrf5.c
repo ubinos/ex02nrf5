@@ -1,16 +1,15 @@
 #include <ubinos.h>
 
 #include <stdio.h>
-
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-static void task1func(void *arg);
-static void task2func(void *arg);
+static void task1_func(void *arg);
+static void task2_func(void *arg);
 
 int appmain(int argc, char *argv[]) {
 	int r;
+	(void) r;
 
 	printf("\n\n\n");
 	printf("================================================================================\n");
@@ -20,10 +19,10 @@ int appmain(int argc, char *argv[]) {
 
 	srand(time(NULL));
 
-	r = task_create(NULL, task1func, NULL, task_getmiddlepriority(), 0, "task1");
+	r = task_create(NULL, task1_func, NULL, task_getmiddlepriority(), 0, "task1");
 	ubi_assert(r == 0);
 
-	r = task_create(NULL, task2func, NULL, task_getmiddlepriority(), 0, "task2");
+	r = task_create(NULL, task2_func, NULL, task_getmiddlepriority(), 0, "task2");
 	ubi_assert(r == 0);
 
 	ubik_comp_start();
@@ -31,7 +30,7 @@ int appmain(int argc, char *argv[]) {
 	return 0;
 }
 
-static void task1func(void *arg) {
+static void task1_func(void *arg) {
 	unsigned int delayms;
 
 	task_sleepms(1000);
@@ -43,7 +42,7 @@ static void task1func(void *arg) {
 	}
 }
 
-static void task2func(void *arg) {
+static void task2_func(void *arg) {
 	unsigned int delayms;
 
 	task_sleepms(1000);
