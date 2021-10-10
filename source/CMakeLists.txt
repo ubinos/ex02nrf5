@@ -8,5 +8,6 @@ project_add_library(ubinos)
 project_add_library(seggerrtt_wrapper)
 project_add_library(nrf5sdk_wrapper)
 project_add_library(nrf5sdk_extension)
+project_add_library(esp8266at)
 project_end()
 
