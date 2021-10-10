@@ -18,16 +18,18 @@ include(${PROJECT_UBINOS_DIR}/config/ubinos_nrf52dk_softdevice.cmake)
 include(${PROJECT_LIBRARY_DIR}/nrf5sdk_wrapper/config/nrf5sdk.cmake)
 include(${PROJECT_LIBRARY_DIR}/nrf5sdk_extension/config/nrf5sdk_extension.cmake)
 
-get_filename_component(_tmp_source_dir "${CMAKE_CURRENT_LIST_DIR}" ABSOLUTE)
+get_filename_component(_tmp_source_dir "${CMAKE_CURRENT_LIST_DIR}/${APP__NAME}" ABSOLUTE)
+string(TOLOWER ${UBINOS__BSP__BOARD_MODEL} _temp_board_model)
 string(TOLOWER ${UBINOS__BSP__NRF52_SOFTDEVICE_NAME} _temp_softdevice_name)
-string(TOLOWER ${NRF5SDK__BOARD_NAME} _temp_board_name)
 
-include_directories(${_tmp_source_dir}/arch/arm/cortexm/nrf5/${_temp_board_name}/${_temp_softdevice_name}/config)
+include_directories(${_tmp_source_dir}/arch/arm/cortexm/${_temp_board_model}/${_temp_softdevice_name}/config)
+include_directories(${_tmp_source_dir}/arch/arm/cortexm/${_temp_board_model})
 include_directories(${_tmp_source_dir})
 
 file(GLOB_RECURSE _tmp_sources
     "${_tmp_source_dir}/*.c"
     "${_tmp_source_dir}/*.cpp"
+    "${_tmp_source_dir}/*.cc"
     "${_tmp_source_dir}/*.S"
     "${_tmp_source_dir}/*.s")
 
